@@ -1,0 +1,4 @@
+.vscode
+/.idea/
+*.log
+dbml-error.log

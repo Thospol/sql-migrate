@@ -1,0 +1,29 @@
+Project Chapanakij {
+  database_type: 'PostgreSQL'
+  Note: '''
+    # Chapanakij Database
+    **markdown content here**
+  '''
+}
+
+Table users {
+  id bigint [pk, increment, not null, note: 'ไอดี']
+  created_at timestamp [not null, note: 'วันเวลาที่สร้าง']
+  updated_at timestamp [not null, note: 'วันเวลาที่อัพเดตล่าสุด']
+  deleted_at timestamp [default: null, note: 'วันเวลาที่ลบ']
+  name varchar [note: 'ชื่อ']
+  surname varchar [note: 'นามสกุล']
+  email varchar [note: 'อีเมล']
+  phone_number varchar [note: 'เบอร์โทร']
+  note: 'ข้อมูลผู้ใช้งาน'
+}
+
+Table tokens {
+  id bigint [pk, increment, not null, note: 'ไอดี']
+  created_at timestamp [not null, note: 'วันเวลาที่สร้าง']
+  updated_at timestamp [not null, note: 'วันเวลาที่อัพเดตล่าสุด']
+  deleted_at timestamp [default: null, note: 'วันเวลาที่ลบ']
+  user_id bigint [note: 'รหัสผู้ใช้งาน']
+  refresh_token varchar [note: 'รีเฟรช Token']
+  note: 'ข้อมูล Token'
+}
